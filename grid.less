@@ -2,16 +2,17 @@
 	margin: 0 auto;
 }
 
+@max-width: 1140px;
+@numCols: 24;
+@colWidth: 2.9%; /*-- Must be less than 4.16666667% --*/
+@gutter: (100-(@colWidth*@numCols))/(@numCols - 1);
+
 .row {
 	width: 100%;
-	max-width: 1140px;
+	max-width: @max-width;
 	margin: 0 auto;
 	overflow: hidden;
 }
-
-@numCols: 24; 
-@colWidth: 2.9%; /*-- Must be less than 4.16666667% --*/
-@gutter: (100-(@colWidth*@numCols))/(@numCols - 1);
 
 .column(@numCol) {
 	float: left;
