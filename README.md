@@ -10,22 +10,20 @@ Open grid.less and adjust the `@max-width`, `@numCols`, and `@colWidth` variable
 
 Since this grid uses LESS, be sure to include the following lines in your `<head>`:
 
-`<link rel="stylesheet/less" type="text/css" href="grid.less">
-<script src="js/less.js" type="text/javascript"></script>`
+	<link rel="stylesheet/less" type="text/css" href="grid.less">
+	<script src="js/less.js" type="text/javascript"></script>
 
 Adding rows and columns is easy and looks like this:
 
-`
-<div class="container">
-	<div class="row">
-		<div class="span16">16</div>
-		<div class="span8 last">8</div>
+	<div class="container">
+		<div class="row">
+			<div class="span16">16</div>
+			<div class="span8 last">8</div>
+		</div>
+		<div class="row">
+			<div class="span24 last">24</div>
+		</div>
 	</div>
-	<div class="row">
-		<div class="span24 last">24</div>
-	</div>
-</div>
-`
 
 The last column in each row must include the `.last` selector and the width of the columns must not exceed the number of columns (24 by default). 
 
