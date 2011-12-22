@@ -1,0 +1,51 @@
+.container {
+	margin: 0 auto;
+}
+
+.row {
+	width: 100%;
+	max-width: 1140px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+@numCols: 24; 
+@colWidth: 2.9%; /*-- Must be less than 4.16666667% --*/
+@gutter: (100-(@colWidth*@numCols))/(@numCols - 1);
+
+.column(@numCol) {
+	float: left;
+	margin-right: @gutter;
+	width: (@colWidth * @numCol) + (@gutter * (@numCol - 1));
+}
+
+.span1 { .column(1); }
+.span2 { .column(2); }
+.span3 { .column(3); }
+.span4 { .column(4); }
+.span5 { .column(5); }
+.span6 { .column(6); }
+.span7 { .column(7); }
+.span8 { .column(8); }
+.span9 { .column(9); }
+.span10 { .column(10); }
+.span11 { .column(11); }
+.span12 { .column(12); }
+.span13 { .column(13); }
+.span14 { .column(14); }
+.span15 { .column(15); }
+.span16 { .column(16); }
+.span17 { .column(17); }
+.span18 { .column(18); }
+.span19 { .column(19); }
+.span20	{ .column(20); }
+.span21 { .column(21); }
+.span22 { .column(22); }
+.span23 { .column(23); }
+.span24 { .column(24); }
+
+.last { margin-right: 0px; }
+
+img, object, embed {
+	max-width: 100%;
+}
