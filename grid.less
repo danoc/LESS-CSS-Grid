@@ -2,17 +2,28 @@
 	margin: 0 auto;
 }
 
-@max-width: 1140px;
-@numCols: 24;
-@colWidth: 2.9%; /*-- Must be less than 4.16666667% --*/
-@gutter: (100-(@colWidth*@numCols))/(@numCols - 1);
+/*-- The next three variables are adjustable --*/
+@max-width: 1140px; 	/*-- Max-width of the whole grid --*/
+@numCols: 24; 			/*-- Number of colums to support --*/
+@colWidth: 2.9%;		/*-- Must be less than (100/@numCols)% --*/
 
+@gutter: (100-(@colWidth*@numCols))/(@numCols - 1);  /*-- Automatically calculated gutter width --*/
+
+
+/*-- Columns are wrapped in rows --*/
 .row {
 	width: 100%;
 	max-width: @max-width;
 	margin: 0 auto;
 	overflow: hidden;
 }
+
+/*-------------------------------------------------------------*\
+|   The width of a column 'x' is equal to the width of a 		|
+|   single column times 'x' plus the width of the gutter 		|
+|   times the quantity x minus 1. The "minus 1" at the 			|
+|   end is because the right-most column doesn't have a gutter.	|
+\*--------------------------------------------------------------*/ 
 
 .column(@numCol) {
 	float: left;
@@ -45,8 +56,14 @@
 .span23 { .column(23); }
 .span24 { .column(24); }
 
+/*-- If adjusting the number of columns, be sure to ------*/
+/*-- add or remove to the number of '.spanXX' selectors --*/
+
+
+/*-- The last column in a row needs to have the last class --*/
 .last { margin-right: 0px; }
 
+/*-- Ensures that images, objects, and embeds resize --*/
 img, object, embed {
 	max-width: 100%;
 }
